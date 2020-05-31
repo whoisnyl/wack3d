@@ -10,7 +10,7 @@ import Button from "../utils/button";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
-  const [response, setResponse] = useState({ type: "", message: "" });
+  const [response, setResponse] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,28 +22,18 @@ export default function Newsletter() {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
-        mode: "no-cors",
       });
 
       const json = await res.text();
 
       if (json.success) {
-        setResponse({
-          type: "success",
-          message: "Thank you for reaching out to us.",
-        });
+        setResponse("success");
       } else {
-        setResponse({
-          type: "error",
-          message: json.message,
-        });
+        setResponse("error");
       }
     } catch (e) {
       console.log("An error occurred", e);
-      setResponse({
-        type: "error",
-        message: "An error occured while submitting the form",
-      });
+      setResponse("error");
     }
   };
 
@@ -59,9 +49,13 @@ export default function Newsletter() {
           icon={faEnvelope}
           changeEvent={(e) => setEmail(e.target.value)}
         />
-        <Button type="submit" classNames="btn btn-primary">
-          notify me
-        </Button>
+        {response != "" ? (
+          response
+        ) : (
+          <Button type="submit" classNames="btn btn-primary">
+            notify me
+          </Button>
+        )}
       </Row>
     </form>
   );
