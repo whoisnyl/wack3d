@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NextNprogress from "nextjs-progressbar";
 
 import { LayoutContext } from "../components/shared/context";
 
@@ -20,6 +21,12 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <LayoutContext.Provider value={value}>
+      <NextNprogress
+        color="red"
+        startPosition="0.3"
+        stopDelayMs="200"
+        height="3"
+      />
       <Component {...pageProps} />
     </LayoutContext.Provider>
   );

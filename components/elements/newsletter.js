@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+import { LayoutContext } from "../shared/context";
 
 import Row from "../utils/row";
 import Input from "../utils/input";
@@ -7,11 +9,19 @@ import Button from "../utils/button";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
-  const [response, setResponse] = useState("");
+  const {
+    loading,
+    setLoading,
+    error,
+    setError,
+    response,
+    setResponse,
+  } = useContext(LayoutContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email.length > 0) {
+      setLoading(true);
       try {
         await fetch(process.env.BACKEND_URL + "/api/sendy", {
           method: "POST",
@@ -23,11 +33,19 @@ export default function Newsletter() {
           mode: "cors",
         })
           .then((response) => response.text())
-          .then((data) =>
-            !data ? setResponse(data.toString()) : setResponse("success")
-          );
+          .then((data) => {
+            if (data.ok) {
+              setResponse(data);
+              setError(false);
+            } else {
+              setResponse(data);
+              setError(true);
+            }
+            setLoading(false);
+          });
       } catch (e) {
-        console.log("An error occurred", e);
+        setError(true);
+        setLoading(false);
         setResponse("An error occured while submitting the form");
       }
     } else {

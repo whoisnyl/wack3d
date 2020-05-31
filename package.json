@@ -17,6 +17,7 @@
     "fs": "^0.0.1-security",
     "next": "latest",
     "next-fonts": "^1.1.0",
+    "nextjs-progressbar": "^0.0.5",
     "react": "^16.7.0",
     "react-countdown": "^2.2.1",
     "react-dom": "^16.7.0",

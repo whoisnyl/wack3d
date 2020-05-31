@@ -18,7 +18,7 @@ export default function Review() {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "250px",
+    centerPadding: "120px",
     slidesToShow: 3,
     speed: 500,
     arrows: true,
@@ -28,16 +28,9 @@ export default function Review() {
     prevArrow: <CustomNext classNames="custom-arrow custom-arrow--left" />,
     responsive: [
       {
-        breakpoint: 1199,
-        settings: {
-          centerPadding: "160px",
-        },
-      },
-      {
-        breakpoint: 767,
+        breakpoint: 1200,
         settings: {
           centerPadding: "60px",
-          adaptiveHeight: true,
           slidesToShow: 1,
         },
       },

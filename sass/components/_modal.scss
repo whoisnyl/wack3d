@@ -1,0 +1,62 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: -100%;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color-dark, 0.65);
+  z-index: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+
+  &-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.5s ease;
+    padding: 20px;
+    background-color: $color-light;
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+
+    &.show {
+      top: 20px;
+    }
+  }
+
+  &_status canvas {
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    margin: 0 auto;
+    display: block;
+  }
+
+  &_message h4 {
+    font-size: 30px;
+    margin: 15px 0 10px;
+    text-align: center;
+    font-family: "Tungsten-Bold";
+    text-transform: uppercase;
+
+    &.error {
+      color: $color-primary;
+    }
+
+    &.success {
+      color: $color-secondary;
+    }
+  }
+}

@@ -28,8 +28,7 @@ export default async function handler(req, res) {
     },
     function (err, result) {
       if (err) {
-        res.status(400).json(err.toString());
-        console.log(err.toString());
+        res.status(422).json(err.toString());
       } else res.status(200).json(result);
     }
   );
