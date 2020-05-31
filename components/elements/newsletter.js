@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import queryString from "query-string";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import Row from "../utils/row";
 import Input from "../utils/input";
 import Button from "../utils/button";
-
-// var Sendy = require("sendy-api");
-// const sendy = new Sendy("https://sendy.purplelogo.ph/", "NWbKOoVCxJhlMUrNXaLG");
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -15,26 +13,29 @@ export default function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(process.env.BACKEND_URL + "/api/sendy", {
+      await fetch("https://sendy.purplelogo.ph/subscribe", {
         method: "POST",
-        body: JSON.stringify({ email: email }),
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        // mode: "no-cors",
+        body: queryString.stringify({
+          name: "",
+          email: email,
+          hp: "",
+          list: process.env.SENDY_LIST_ID,
+          subform: "yes",
+          submit: "",
+        }),
+      }).then((response) => {
+        if (response.ok) {
+          response.text().then((text) => {
+            console.log(text);
+          });
+        } else {
+          console.log(response);
+        }
       });
-
-      const json = await res.text();
-
-      if (json.success) {
-        setResponse("success");
-      } else {
-        setResponse("connected but error");
-      }
-    } catch (e) {
-      console.log("An error occurred", e);
-      setResponse("error");
+    } catch (error) {
+      setResponse("failed to fetch");
     }
   };
 
