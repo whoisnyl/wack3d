@@ -13,7 +13,7 @@ export default function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch("https://sendy.purplelogo.ph/subscribe", {
+      await fetch(process.env.BACKEND_URL + "/api/sendy", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
