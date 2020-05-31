@@ -22,6 +22,7 @@ export default function Newsletter() {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
+        mode: "no-cors",
       });
 
       const json = await res.text();
