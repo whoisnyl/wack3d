@@ -23,11 +23,10 @@ export default async function handler(req, res) {
   sendy.subscribe(
     { email: email, list_id: process.env.SENDY_LIST_ID },
     function (err, result) {
-      if (err) console.log(err);
-      else console.log("Success: " + result);
+      if (err) res.status(400).json(err);
+      else res.status(200).json(result);
     }
   );
-  res.status(201).json(email);
 }
 
 export const config = {
