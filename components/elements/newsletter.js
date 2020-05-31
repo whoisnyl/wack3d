@@ -18,6 +18,9 @@ export default function Newsletter() {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accepty, Authorization",
+          "Access-Control-Allow-Methods": "POST",
         },
         // mode: "no-cors",
         body: queryString.stringify({
