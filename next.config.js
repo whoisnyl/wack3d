@@ -14,5 +14,6 @@ module.exports = withFonts({
     SENDY_API_KEY: process.env.SENDY_API_KEY,
     SENDY_URL: process.env.SENDY_URL,
     SENDY_LIST_ID: process.env.SENDY_LIST_ID,
+    BACKEND_URL: process.env.BACKEND_URL,
   },
 });
