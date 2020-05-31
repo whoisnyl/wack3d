@@ -15,7 +15,10 @@ export default function Newsletter() {
     try {
       await fetch("https://sendy.purplelogo.ph/subscribe", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Access-Control-Allow-Origin": "*",
+        },
         // mode: "no-cors",
         body: queryString.stringify({
           name: "",
