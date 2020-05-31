@@ -25,7 +25,7 @@ export default function Newsletter() {
         mode: "no-cors",
       });
 
-      const json = await res.json();
+      const json = await res.text();
 
       if (json.success) {
         setResponse({
