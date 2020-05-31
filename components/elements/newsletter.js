@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import queryString from "query-string";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import Row from "../utils/row";
@@ -12,36 +11,27 @@ export default function Newsletter() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await fetch(process.env.BACKEND_URL + "/api/sendy", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "Origin, X-Requested-With, Content-Type, Accepty, Authorization",
-          "Access-Control-Allow-Methods": "POST",
-        },
-        // mode: "no-cors",
-        body: queryString.stringify({
-          name: "",
-          email: email,
-          hp: "",
-          list: process.env.SENDY_LIST_ID,
-          subform: "yes",
-          submit: "",
-        }),
-      }).then((response) => {
-        if (response.ok) {
-          response.text().then((text) => {
-            console.log(text);
-          });
-        } else {
-          console.log(response);
-        }
-      });
-    } catch (error) {
-      setResponse("failed to fetch");
+    if (email.length > 0) {
+      try {
+        await fetch(process.env.BACKEND_URL + "/api/sendy", {
+          method: "POST",
+          body: JSON.stringify({ email: email }),
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          mode: "cors",
+        })
+          .then((response) => response.text())
+          .then((data) =>
+            !data ? setResponse(data.toString()) : setResponse("success")
+          );
+      } catch (e) {
+        console.log("An error occurred", e);
+        setResponse("An error occured while submitting the form");
+      }
+    } else {
+      setResponse("Please enter your Email Address");
     }
   };
 
@@ -57,13 +47,9 @@ export default function Newsletter() {
           icon={faEnvelope}
           changeEvent={(e) => setEmail(e.target.value)}
         />
-        {response != "" ? (
-          response
-        ) : (
-          <Button type="submit" classNames="btn btn-primary">
-            notify me
-          </Button>
-        )}
+        <Button type="submit" classNames="btn btn-primary">
+          notify me
+        </Button>
       </Row>
     </form>
   );

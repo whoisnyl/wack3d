@@ -17,14 +17,18 @@ export default async function handler(req, res) {
   // Run cors
   await cors(req, res);
 
-  const { email } = JSON.parse(req.body);
+  const { email } = req.body;
 
   // Rest of the API logic
   sendy.subscribe(
-    { email: email, list_id: process.env.SENDY_LIST_ID },
+    {
+      email: email,
+      list_id: process.env.SENDY_LIST_ID,
+      api_key: process.env.SENDY_API_KEY,
+    },
     function (err, result) {
       if (err) {
-        res.status(400).json({ error: err, result: result });
+        res.status(400).json(err.toString());
         console.log(err.toString());
       } else res.status(200).json(result);
     }
