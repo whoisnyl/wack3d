@@ -31,7 +31,6 @@ export default function Review() {
         breakpoint: 1199,
         settings: {
           centerPadding: "160px",
-          slidesToShow: 1,
         },
       },
       {
@@ -39,6 +38,7 @@ export default function Review() {
         settings: {
           centerPadding: "60px",
           adaptiveHeight: true,
+          slidesToShow: 1,
         },
       },
     ],
