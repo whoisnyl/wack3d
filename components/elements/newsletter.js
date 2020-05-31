@@ -15,7 +15,7 @@ export default function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.BACKEND_URL}/api/sendy`, {
+      const res = await fetch(process.env.BACKEND_URL + "api/sendy", {
         method: "POST",
         body: JSON.stringify({ email: email }),
         headers: {
