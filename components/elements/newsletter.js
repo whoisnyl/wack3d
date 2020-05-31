@@ -29,7 +29,7 @@ export default function Newsletter() {
       if (json.success) {
         setResponse("success");
       } else {
-        setResponse("error");
+        setResponse("connected but error");
       }
     } catch (e) {
       console.log("An error occurred", e);
