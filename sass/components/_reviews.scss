@@ -1,0 +1,12 @@
+.customer-reviews {
+  position: relative;
+
+  .section {
+    max-width: 1160px;
+    margin: 0 auto;
+
+    &.customer-reviews_top {
+      max-width: 600px;
+    }
+  }
+}

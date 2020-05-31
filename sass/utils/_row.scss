@@ -1,0 +1,95 @@
+.row {
+  @include flex(row, wrap);
+
+  // Direction
+
+  &-direction-column {
+    @include flex(column, wrap);
+  }
+
+  &-direction-row {
+    @include flex(row, wrap);
+  }
+
+  &-direction-md-row {
+    @media screen and (min-width: 768px) {
+      @include flex(row, wrap);
+    }
+  }
+
+  &-direction-xl-row {
+    @media screen and (min-width: 1200px) {
+      @include flex(row, wrap);
+    }
+  }
+
+  // Align Content
+
+  &-align-center {
+    @include flex-align(center);
+  }
+
+  &-align-start {
+    @include flex-align(flex-start);
+  }
+
+  &-align-end {
+    @include flex-align(flex-end);
+  }
+
+  &-align-stretch {
+    @include flex-align(stretch);
+  }
+
+  // Justify Content
+
+  &-justify-center {
+    @include flex-justify(center);
+  }
+
+  &-justify-between {
+    @include flex-justify(space-between);
+  }
+
+  &-justify-xl-between {
+    @media screen and (min-width: 1200px) {
+      @include flex-justify(space-between);
+    }
+  }
+
+  &-justify-spacec {
+    @include flex-justify(space-around);
+  }
+
+  &-justify-start {
+    @include flex-justify(flex-start);
+  }
+
+  &-justify-end {
+    @include flex-justify(flex-end);
+  }
+
+  // Order
+
+  .row-order-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .row-order-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .row-order-xl-first {
+      -ms-flex-order: -1;
+      order: -1;
+    }
+
+    .row-order-xl-last {
+      -ms-flex-order: 13;
+      order: 13;
+    }
+  }
+}

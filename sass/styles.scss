@@ -1,0 +1,17 @@
+@import "reset-css";
+@import "./global/variables";
+@import "./global/mixins";
+@import "./global/fonts";
+@import "./global/settings";
+
+@import "./utils/row";
+@import "./utils/button";
+@import "./utils/input";
+
+@import "./components/container";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/section";
+@import "./components/ticker";
+@import "./components/slider";
+@import "./components/reviews";

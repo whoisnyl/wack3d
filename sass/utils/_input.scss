@@ -1,0 +1,62 @@
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+
+  .form-control {
+    width: 100%;
+    font-family: "Anodina-Bold";
+    font-size: 16px;
+    background-color: $color-light;
+    padding: 1.15rem 1.25rem;
+    max-height: 55px;
+    border-radius: 8px;
+    border: 0;
+    appearance: none;
+    outline: 0 !important;
+    box-shadow: none !important;
+
+    &--icon {
+      padding-right: 50px;
+    }
+
+    &--primary {
+      color: $color-primary;
+
+      &::-webkit-input-placeholder {
+        color: $color-primary-light !important;
+        opacity: 1 !important;
+        text-transform: uppercase;
+      }
+
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        color: $color-primary-light !important;
+        opacity: 1 !important;
+        text-transform: uppercase;
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $color-primary-light !important;
+        opacity: 1 !important;
+        text-transform: uppercase;
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-primary-light !important;
+        opacity: 1 !important;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    display: block;
+    color: $color-tertiary;
+  }
+}

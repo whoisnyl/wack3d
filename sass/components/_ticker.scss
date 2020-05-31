@@ -1,0 +1,151 @@
+.ticker {
+  width: calc(100% + 40px);
+  margin: 0 -20px;
+  max-width: initial;
+  margin-top: 50px;
+  transition: all 0.3s ease;
+  background-color: $color-tertiary;
+  -webkit-box-shadow: 0px -5px 20px 0px rgba($color-dark, 0.65);
+  -moz-box-shadow: 0px -5px 20px 0px rgba($color-dark, 0.65);
+  box-shadow: 0px -5px 20px 0px rgba($color-dark, 0.65);
+
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .container-inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &_countdown {
+    h4 {
+      font-size: 30px;
+    }
+
+    &-time {
+      padding: 20px 0;
+
+      div {
+        padding: 0 11px;
+        text-align: center;
+      }
+
+      p {
+        font-family: "Tungsten-Bold";
+        font-size: 33px;
+
+        @media screen and (min-width: 768px) {
+          font-size: 45px;
+        }
+      }
+
+      span {
+        font-family: "Anodina-Bold";
+        font-size: 12px;
+        color: $color-secondary;
+        display: block;
+      }
+    }
+  }
+
+  &_newsletter {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .form-group {
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: initial;
+      max-width: initial;
+      margin: 0;
+
+      .form-group {
+        margin: 0;
+        width: 363px;
+        margin-right: 20px;
+      }
+
+      .btn {
+        width: initial;
+      }
+    }
+  }
+}
+
+.ticker--sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 150;
+  top: -70px;
+  padding: 10px 15px;
+  background-color: $color-tertiary;
+  transition: top 0.3s ease;
+
+  &.show {
+    top: 0;
+  }
+
+  .ticker_countdown-time {
+    padding: 0;
+
+    div {
+      padding: 0;
+      margin: 0 -8px;
+
+      @media screen and (min-width: 768px) {
+        margin: 0 -15px;
+      }
+    }
+    .ct {
+      padding: 0 8px;
+      margin: 0;
+
+      @media screen and (min-width: 768px) {
+        padding: 0 15px;
+      }
+    }
+
+    p {
+      font-size: 25px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 35px;
+      }
+    }
+
+    span {
+      font-size: 10px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ticker--sticky_desktop {
+    position: fixed;
+    top: 0;
+    bottom: initial;
+    z-index: 150;
+  }
+}

@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/main-background.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  font-family: "Anodina-Regular";
+  min-height: 100vh;
+  padding-top: 95px;
+  font-size: 16px;
+  color: $color-light;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 144px;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+
+  &.big-thumbnail {
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (min-width: 1200px) {
+      display: inline-block;
+      margin: 0;
+      max-width: 500px;
+    }
+  }
+}
+
+.font-tungsten-bold {
+  font-family: "Tungsten-Bold";
+}
+
+.font-anodina {
+  font-family: "Anodina-Regular";
+}
+
+.font-anodina-bold {
+  font-family: "Anodina-Bold";
+}
+
+.font-anodina-extrabold {
+  font-family: "Anodina-ExtraBold";
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color: $color-light !important;
+}

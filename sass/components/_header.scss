@@ -1,0 +1,41 @@
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 1.5rem 20px;
+
+  @media screen and (min-width: 1200px) {
+    padding: 3rem 20px;
+  }
+
+  .container-inner {
+    padding: 0;
+  }
+
+  &_logo {
+    max-width: 150px;
+  }
+
+  &_social {
+    a {
+      display: block;
+      color: $color-light;
+
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        color: $color-secondary;
+      }
+
+      svg {
+        width: 20px;
+      }
+    }
+  }
+}

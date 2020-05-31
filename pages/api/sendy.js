@@ -1,0 +1,37 @@
+import Cors from "cors";
+import initMiddleware from "../../lib/init-middleware";
+
+const Sendy = require("sendy-api");
+const sendy = new Sendy(process.env.SENDY_URL, process.env.SENDY_API_KEY);
+
+// Initialize the cors middleware
+const cors = initMiddleware(
+  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+  Cors({
+    // Only allow requests with GET, POST and OPTIONS
+    methods: ["POST"],
+  })
+);
+
+export default async function handler(req, res) {
+  // Run cors
+  await cors(req, res);
+
+  const { email } = JSON.parse(req.body);
+
+  // Rest of the API logic
+  sendy.subscribe(
+    { email: email, list_id: process.env.SENDY_LIST_ID },
+    function (err, result) {
+      if (err) console.log(err);
+      else console.log("Success: " + result);
+    }
+  );
+  res.status(201).json(email);
+}
+
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+};

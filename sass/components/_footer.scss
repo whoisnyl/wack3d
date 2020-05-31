@@ -1,0 +1,27 @@
+.footer {
+  padding: 50px 20px;
+
+  section {
+    margin: 0 auto 0;
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 28px;
+    color: $color-primary-light;
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus,
+      &:visited,
+      &:active {
+        color: $color-secondary;
+      }
+    }
+  }
+}

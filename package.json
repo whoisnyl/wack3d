@@ -1,0 +1,29 @@
+{
+  "name": "wack3d",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "fs": "^0.0.1-security",
+    "next": "latest",
+    "next-fonts": "^1.1.0",
+    "react": "^16.7.0",
+    "react-countdown": "^2.2.1",
+    "react-dom": "^16.7.0",
+    "react-slick": "^0.26.1",
+    "reset-css": "^5.0.1",
+    "sass": "^1.26.5",
+    "sendy-api": "^0.1.0"
+  },
+  "license": "ISC"
+}
