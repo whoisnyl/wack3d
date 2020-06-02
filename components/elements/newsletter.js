@@ -16,6 +16,7 @@ export default function Newsletter() {
     setError,
     response,
     setResponse,
+    setModal,
   } = useContext(LayoutContext);
 
   const handleSubmit = async (e) => {
@@ -42,13 +43,16 @@ export default function Newsletter() {
               setError(true);
             }
             setLoading(false);
+            setModal(true);
           });
       } catch (e) {
         setError(true);
         setLoading(false);
+        setModal(true);
         setResponse("An error occured while submitting the form");
       }
     } else {
+      setModal(true);
       setResponse("Please enter your Email Address");
     }
   };
@@ -64,10 +68,17 @@ export default function Newsletter() {
           variance="primary"
           icon={faEnvelope}
           changeEvent={(e) => setEmail(e.target.value)}
+          disabled={response == "true" ? true : false}
         />
-        <Button type="submit" classNames="btn btn-primary">
-          notify me
-        </Button>
+        {response == "true" ? (
+          <Button type="button" classNames="btn btn-primary">
+            Success!
+          </Button>
+        ) : (
+          <Button type="submit" classNames="btn btn-primary">
+            {loading ? "please wait..." : "notify me"}
+          </Button>
+        )}
       </Row>
     </form>
   );

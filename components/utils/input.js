@@ -11,6 +11,7 @@ export default function Input({
   name,
   icon,
   changeEvent,
+  disabled,
 }) {
   return (
     <div className={`form-group ${classNames}`}>
@@ -24,6 +25,7 @@ export default function Input({
         name={name}
         placeholder={placeholder}
         onChange={changeEvent}
+        disabled={disabled}
       />
       {icon && (
         <span className="input-icon">
