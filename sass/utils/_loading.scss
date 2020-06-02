@@ -10,6 +10,14 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 
+  &.bg-dark {
+    background-color: rgba($bg-dark, 0.5);
+  }
+
+  &.transparent {
+    background: transparent;
+  }
+
   &.show {
     opacity: 1;
     top: 0;

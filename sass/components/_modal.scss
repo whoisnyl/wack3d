@@ -6,7 +6,7 @@
   left: -100%;
   bottom: 0;
   right: 0;
-  background-color: rgba($color-dark, 0.65);
+  background-color: rgba($bg-dark, 0.5);
   z-index: 600;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -24,7 +24,7 @@
     transform: translateX(-50%);
     transition: top 0.5s ease;
     padding: 20px;
-    background-color: $color-light;
+    background-color: $color-tertiary;
     border-radius: 8px;
     width: calc(100% - 40px);
     max-width: 400px;
@@ -52,11 +52,11 @@
     text-transform: uppercase;
 
     &.error {
-      color: $color-primary;
+      color: $color-light;
     }
 
     &.success {
-      color: $color-secondary;
+      color: $color-light;
     }
   }
 }

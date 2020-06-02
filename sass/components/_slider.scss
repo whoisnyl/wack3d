@@ -1,6 +1,101 @@
+.slick-initialized .slick-slide {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slick-list {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+.wrapper {
+  position: relative;
+  outline: 0;
+  .close {
+    display: none;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    background-color: $color-light;
+    border-radius: 30px;
+    color: $color-primary-light;
+    cursor: pointer;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -7px;
+      margin-left: -7px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      top: -20px;
+      right: -20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        margin-top: -9px;
+        margin-left: -9px;
+      }
+    }
+  }
+}
+
 .review-slider {
   margin: 50px -20px;
   position: relative;
+  cursor: pointer;
+
+  .slick-slider::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($color-dark, 0.5);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  &.lightbox {
+    z-index: 1000;
+    position: relative;
+
+    .slick-slider::before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slick-active:not(.slick-current) {
+      opacity: 0.5;
+    }
+
+    .slick-current .wrapper .close {
+      display: block;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     margin: 100px -20px;
@@ -46,18 +141,26 @@
       margin-top: -40px;
 
       &--left {
-        left: 30px;
+        left: 50px;
       }
 
       &--right {
-        right: 30px;
+        right: 50px;
       }
     }
   }
 
   &_item {
+    position: relative;
     padding: 25px 20px;
     background-color: $color-tertiary;
+    outline: 0;
+    transition: all 0.3s ease;
+
+    &--active {
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
     @media screen and (min-width: 1200px) {
       padding: 40px;
@@ -81,6 +184,7 @@
       p {
         font-size: 12px;
         line-height: 18px;
+        white-space: pre-wrap;
 
         @media screen and (min-width: 768px) {
           font-size: 17px;
