@@ -16,13 +16,13 @@ export default function Header() {
             <img src="images/logo.png" alt="WACK3D" />
           </div>
           <Row classNames="header_social">
-            <a href="https://www.facebook.com">
+            <a href="https://www.facebook.com/@getwack3d">
               <FontAwesomeIcon icon={faFacebookSquare} />
             </a>
-            <a href="https://www.facebook.com">
+            <a href="https://www.twitter.com/@getwack3d">
               <FontAwesomeIcon icon={faTwitterSquare} />
             </a>
-            <a href="https://www.facebook.com">
+            <a href="https://www.instagram.com/@getwack3d">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
           </Row>
