@@ -29,7 +29,7 @@ export default function CustomGamingLogos() {
             accumsan lacus vel facilisis.
           </Text>
           <Button
-            type="button"
+            href="https://discord.gg/eRu4V45"
             classNames="btn btn-lg btn-primary"
             icon="/images/icon-discord.png"
           >

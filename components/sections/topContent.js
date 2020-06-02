@@ -75,7 +75,7 @@ export default function TopContent() {
             <img src="/images/icon-rectangle.png" alt="rectangle" />
           </Row>
           <Button
-            type="button"
+            href="https://discord.gg/eRu4V45"
             classNames="btn btn-lg btn-primary"
             icon="/images/icon-discord.png"
           >
