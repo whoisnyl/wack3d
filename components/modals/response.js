@@ -5,14 +5,10 @@ import { LayoutContext } from "../shared/context";
 import Heading from "../utils/heading";
 
 export default function Response({ classNames, status, message }) {
-  const { setResponse } = useContext(LayoutContext);
-
-  const closeModal = () => {
-    setResponse("");
-  };
+  const { setModal } = useContext(LayoutContext);
 
   return (
-    <div className={`modal ${classNames}`} onClick={closeModal}>
+    <div className={`modal ${classNames}`} onClick={() => setModal(false)}>
       <div className={`modal-content ${classNames}`}>
         <div className="modal_status">
           <canvas
