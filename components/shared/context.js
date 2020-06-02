@@ -7,4 +7,6 @@ export const LayoutContext = createContext({
   setError: () => {},
   response: "",
   setResponse: () => {},
+  modal: false,
+  setModal: () => {},
 });

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import Layout from "../components/shared/layout";
 import { LayoutContext } from "../components/shared/context";
@@ -16,7 +16,14 @@ import Loading from "../components/utils/loading";
 import Response from "../components/modals/response";
 
 export default function Home() {
-  const { loading, error, response } = useContext(LayoutContext);
+  const { loading, modal, response } = useContext(LayoutContext);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setVisible(true);
+    }, 300);
+  }, [visible]);
 
   return (
     <Layout>
@@ -26,11 +33,11 @@ export default function Home() {
         <CustomGamingOverlay />
         <CustomGamingLogos />
         <CustomGamingWebsite />
-        <Reviews />
+        {visible && <Reviews />}
       </main>
       <Footer />
       <Response
-        classNames={response != "" ? "show" : "hide"}
+        classNames={modal != "" ? "show" : "hide"}
         status={response == "true" ? "success" : "error"}
         message={response == "true" ? "Subscription success!" : response}
       />
