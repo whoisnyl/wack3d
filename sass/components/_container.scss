@@ -23,11 +23,9 @@
   &.top-content {
     @media screen and (min-width: 1200px) {
       min-height: calc(100vh - 144px);
-      padding-bottom: 150px;
     }
 
     @media screen and (min-width: 1440px) {
-      padding-bottom: 100px;
     }
   }
 }
