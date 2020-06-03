@@ -31,7 +31,7 @@ export default function Reviews() {
           about your needs.
         </Text>
         <Button
-          href="https://discord.gg/eRu4V45"
+          href="https://discord.gg/fzpU8KQ"
           classNames="btn btn-lg btn-primary"
           icon="/images/icon-discord.png"
         >

@@ -29,7 +29,7 @@ export default function CustomGamingWebsite() {
             discuss the details of your website.
           </Text>
           <Button
-            href="https://discord.gg/eRu4V45"
+            href="https://discord.gg/fzpU8KQ"
             classNames="btn btn-lg btn-primary"
             icon="/images/icon-discord.png"
           >
