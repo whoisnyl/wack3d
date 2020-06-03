@@ -81,7 +81,7 @@ export default function Review() {
       <Slider {...config}>
         {reviews &&
           reviews.map((review) => (
-            <div className="wrapper">
+            <div className="wrapper" key={review.id}>
               <span
                 className="close"
                 onClick={() => setExpand({ id: null, expand: false })}
@@ -89,7 +89,6 @@ export default function Review() {
                 <FontAwesomeIcon icon={faTimes} />
               </span>
               <div
-                key={review.id}
                 className={`review-slider_item ${
                   expand["id"] == review.id && expand["expand"]
                     ? "review-slider_item--active"
