@@ -27,10 +27,13 @@
       }
 
       &:hover,
-      &:active,
-      &:focus,
-      &:visited {
+      &:focus {
         color: $color-secondary;
+      }
+
+      &:active,
+      &:visited {
+        color: $color-light;
       }
 
       svg {
