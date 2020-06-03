@@ -23,10 +23,10 @@ export default function CustomGamingLogos() {
             Custom Gaming Logos
           </Heading>
           <Text tag="p" classNames="section_description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
+            If you want to be taken seriously in such a competitive field,
+            you'll need a solid, memorable online gaming identity (logo) Don't
+            settle for some cheap looking logo, get a unique, quality made
+            gaming logo today!
           </Text>
           <Button
             href="https://discord.gg/eRu4V45"

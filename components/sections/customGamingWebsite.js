@@ -23,10 +23,10 @@ export default function CustomGamingWebsite() {
             Custom Gaming Website
           </Heading>
           <Text tag="p" classNames="section_description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
+            Are you obsessed with gaming? Do you have a team but not a team
+            website? Have you thought about possibly having a quality made
+            website built for your team? Lets talk more on discord to further
+            discuss the details of your website.
           </Text>
           <Button
             href="https://discord.gg/eRu4V45"
